@@ -1,0 +1,42 @@
+@font-face
+{
+font-family: 'Gotham-Book';
+src: local('Gotham-Book'),url('Gotham-Book.otf') format('opentype');
+}
+@font-face
+{
+font-family: 'Gotham-Medium';
+src: local('Gotham-Medium'),url('Gotham-Medium.otf') format('opentype');
+}
+
+div {
+    font-weight: bold;
+    font-size: 55;
+}
+
+a {
+    color: #16A4FA;
+    text-decoration: underline;
+    font-size: 40;
+    font-weight: normal;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-centered {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
