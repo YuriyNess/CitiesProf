@@ -30,12 +30,10 @@ class WebViewController: UIViewController, WKNavigationDelegate, Storyboarded {
         if let writePath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(imageTitle).jpg") {
             do {
                 try image.jpegData(compressionQuality: 1.0)?.write(to: writePath)
-                //let imUrl = Bundle.main.url(forResource: "\(imageTitle)", withExtension: "jpg")!
-                webView.loadHTML(fromString: imageTitle, imageUrl:writePath.absoluteString, redirectUrl: url) //imUrl.absoluteString)
+                webView.loadHTML(fromString: imageTitle, imageUrl:writePath.absoluteString, redirectUrl: url)
             } catch {
                 print(error)
             }
-            
         }
     }
     

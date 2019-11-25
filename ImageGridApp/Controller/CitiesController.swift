@@ -30,6 +30,7 @@ final class CitiesController: UIViewController, Storyboarded {
         
         selectedImageView.isUserInteractionEnabled = true
         selectedImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectedImageTap)))
+        model.load()
     }
     
     @objc
@@ -40,11 +41,6 @@ final class CitiesController: UIViewController, Storyboarded {
         vc.imageTitle = imageTitle.text ?? ""
         vc.url = url
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        model.load()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

@@ -16,13 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let webService = Webservice()
     
     lazy var root: UINavigationController = {
-        
-        let imageOperations = ImageLoadOperations(operationsFactory: OperationsFactory(),
-                                                  service: webService,
-                                                  resourceFactory: ImageRresourceFactory())
-        
         let vc = CitiesController.instantiate()
         let model = CitiesModel()
+        let imageOperations = ImageLoadOperations(operationsFactory: OperationsFactory(), service: webService, resourceFactory: ImageRresourceFactory())
         model.operationsOperator = imageOperations
         model.delegate = vc
         vc.model = model
